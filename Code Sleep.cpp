@@ -1,4 +1,5 @@
 #include<iostream>
+#include<conio.h>
 #include<math.h>
 using namespace std;
 
@@ -8,33 +9,34 @@ int main()
 int n;
 cout<<"enter number of days:"<<endl;
 cin>>n;
-float arr[n-1];
-char brr[n][n];
-int i,k=0;
-for(int i=0; i<n; i++)
+float arr[n];
+char brr[n+1][n+1];
+int i,j,k=0;
+for( i=0; i<n; i++)
 	cin>>arr[i];
-for(int i=0; i<n+1; i++)
+for(i=0; i<n+1; i++)
 	{
-	    for(int j=0; j<n+1; j++)
+	    for( j=0; j<n+1; j++)
 	{
 	    
 		brr[i][j]=' ';
 }
 }
-for(int i=1; i<n+1; i++)
+for( i=0; i<n; i++)
 {
-k=floor(arr[i-1]);
-brr[i][k]='o';
+k=ceil(arr[i]);
+cout<<endl<<k<<" "<<i<<endl;
+brr[k][i]='o';
 }
-for(int j=1; j<n+1; j++)
+for(i=0; i<n+1; i++)
 {
-    brr[n][j]='_';
+    brr[n][i]='_';
 }
 for(int i=0; i<n+1; i++)
 {
     brr[i][0]='|';
 }
-brr[n+1][0]='@';
+brr[n][0]='@';
 
 for(int i=0; i<n+1; i++)
 	{
@@ -45,6 +47,6 @@ for(int i=0; i<n+1; i++)
 cout<<endl;
 	    
 	}
-
+getch();
 return 0;
 }
